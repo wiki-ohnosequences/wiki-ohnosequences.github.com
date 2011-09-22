@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Gollum, github, gollum site and friends</title>
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="/css/gollum.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" charset="utf-8" />
+    <script src="/javascript/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/javascript/jquery.text_selection-1.0.0.min.js" type="text/javascript"></script>
+    <script src="/javascript/jquery.previewable_comment_form.js" type="text/javascript"></script>
+    <script src="/javascript/jquery.tabs.js" type="text/javascript"></script>
+    <script src="/javascript/gollum.js" type="text/javascript"></script>
+    <script src="/javascript/MathJax/MathJax.js" type="text/javascript">
+      MathJax.OutputJax.fontDir = "http://github-assets.s3.amazonaws.com/javascripts/MathJax/fonts"
+      MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"]
+      })
+    </script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <div class="actions">
+                <div>
+                  <a href="/Home.html">Home</a>
+                </div>
+              </div>
+              <h1>Gollum, github, gollum site and friends</h1>
+              <div class="content wikistyle gollum markdown">
+                <h2>github wikis</h2>
+
+<p>We've been using gollum through github project wikis in the last few months and it's great, and mostly fits our needs (svg support would be a great addition, though). However, we want those wikis to ve viewable outside github.com interface. There's Smeagol, but this forces you to run a server, and I do not want to lose github-pages deployment which is just wonderful. The solution I've found is through gollum-site.</p>
+
+<h3>editing</h3>
+
+<p>editing can be done in two ways, just as with any github-hosted gollum wiki:</p>
+
+<ol><li>through the web interface at github.com; this is great for <em>existing</em> page editing and small additions</li>
+<li>locally, cloning the repository and committing to master. Note that two really cool features such as sidebar creation and organizing pages under subdirectories can only be done this way: see <a href="https://github.com/blog/774-git-powered-wikis-improved#comment-9717">https://github.com/blog/774-git-powered-wikis-improved#comment-9717</a></li>
+</ol><h3>static site generation</h3>
+
+<p>there's a lot of <em>view-only</em> use of wikis, and this is a more pleasant experience outside of github.com, with custom typography settings, etc. We're going to use <code>gollum-site</code> for this: <a href="https://github.com/dreverri/gollum-site">gollum-site project</a>. We're going to install this locally, and let it (incrementally) generate each site.</p>
+
+<h3>site deployment</h3>
+
+<p>We're going to use github pages for this.</p>
+
+<h3>github.com layout</h3>
+
+<p>In a nice display of confusing circularity, this is the layout we're going to use (wiki.ohnosequences.com as the example):</p>
+
+<ul><li>create the github organization <code>wiki-ohnosequences</code></li>
+<li>under that org, create the repo <code>wiki-ohnosequences.github.com</code>. This will have repo url <code>http://github.com/wiki-ohnosequences.github.com</code> and the contents of the <code>master</code> branch will be served as-is from <code>http://wiki-ohnosequences.github.com</code>.</li>
+<li>create a github.com wiki for that repo. This will create <em>another</em> repo, accessible at <code>git@github.com:wiki-ohnosequences/wiki-ohnosequences.github.com.wiki.git</code>. Everything you push there will be processed by gollum at github.com, and viewable through the github.com site.</li>
+<li><em>locally</em>, clone the wiki repository: <code>git clone git@github.com:wiki-ohnosequences/wiki-ohnosequences.github.com.wiki.git</code> and use <code>gollum-site</code> to generate a static site from that. This will be in a <code>_site</code> folder. There (and this is first-time setup) clone the <code>wiki-ohnosequences.github.com</code> repo and push to <code>master</code>.</li>
+</ul>
+              </div>
+            </div>
+          </div>
+          <div class="admin">
+            <div style="float: left;">
+              <small>Last edited by <b>Eduardo Pareja-Tobes</b>, 2011-09-22 15:59:26</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
