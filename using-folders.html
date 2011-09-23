@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Index</title>
+    <title>using folders</title>
     <link rel="stylesheet" href="/css/screen.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/gollum.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/syntax.css" type="text/css" charset="utf-8" />
@@ -31,11 +31,21 @@
                   <a href="/Home.html">Home</a>
                 </div>
               </div>
-              <h1>Index</h1>
+              <h1>using folders</h1>
               <div class="content wikistyle gollum markdown">
-                <p>hey!!</p>
+                <h2>folders</h2>
 
-<p>the new shiny <em>oh no sequences!</em> wiki</p>
+<p>Folders are a nice feature of gollum, which unfortunately cannot be accessed through the web interface. </p>
+
+<h3>folders and wiki links</h3>
+
+<p>First thing to note is that wiki pages linking works <em>as if there were no folders</em>. This may seem strange, but in practice is a nice way of not having broken links while being able to reorganize things freely. Links work as follows:</p>
+
+<ul><li>the only thing that you can include between square brackets <code>[[...]]</code> is a page <strong>name</strong>. Anything you put there will be interpreted as such. No way to refer to the folder structure. If you add a link such as <code>[[buh/blah]]</code> this will look for a page named <code>buh--blah</code> or something like that.</li>
+<li>link resolution walks breadth-first the folder structure from the top, and picks the first page which matches.</li>
+</ul><h3>why folders, then?</h3>
+
+<p>you'd be asking; well, the answer is <em>sidebars</em> and <em>footers</em>. You can put a sidebar at it will show up in any page located under the folder, and in those nested folders for which there's no sidebar (same for footers). That's a nice, practical way of creating TOCs and such.</p>
               </div>
             </div>
           </div>

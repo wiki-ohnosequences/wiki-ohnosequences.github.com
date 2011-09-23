@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Index</title>
+    <title>wiki editing</title>
     <link rel="stylesheet" href="/css/screen.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/gollum.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="/css/syntax.css" type="text/css" charset="utf-8" />
@@ -31,11 +31,56 @@
                   <a href="/Home.html">Home</a>
                 </div>
               </div>
-              <h1>Index</h1>
+              <h1>wiki editing</h1>
               <div class="content wikistyle gollum markdown">
-                <p>hey!!</p>
+                <p>As said before, we have two different ways of editing the wiki:</p>
 
-<p>the new shiny <em>oh no sequences!</em> wiki</p>
+<ol><li>through github.com gollum web interface</li>
+<li>locally, as with any other git repository</li>
+</ol><p>There are two things which cannot be done through 1. <em>adding folders</em> and <em>creating sidebars</em>. With respect to folders, AFAIK it is also impossible to <em>create</em> a new page in a folder different from the top one through 1. </p>
+
+<p>Let's see then how we can setup our local copy of the wiki; once you're used to it, you'll probably prefer local editing, at least for big editings, re-organizing stuff, etc.</p>
+
+<h2>local editing setup and how-to</h2>
+
+<p>This does not differ a lot from standard github repo setup, but anyway let's give a detailed walkthrough.</p>
+
+<h3>clone the wiki repo</h3>
+
+<p>Inside your repos folder on your local machine, </p>
+
+<div class="highlight"><pre>    git clone git@github.com:wiki-ohnosequences/wiki-ohnosequences.github.com.wiki.git
+</pre>
+</div>
+
+
+<p>that's all! :)</p>
+
+<h3>editing</h3>
+
+<p><code>cd</code> into your repo, and grab the latest version</p>
+
+<div class="highlight"><pre>    <span class="nb">cd </span>wiki-ohnosequences.github.com.wiki
+    <span class="c"># if you're feeling lucky, just pull</span>
+    git fetch
+</pre>
+</div>
+
+
+<p>Now, just add/change whatever you want, and when you're done</p>
+
+<div class="highlight"><pre>    git add &lt;whatever&gt;
+    git commit -m <span class="s1">'awesome docs added'</span>
+</pre>
+</div>
+
+
+<p>The only thing left is pushing</p>
+
+<div class="highlight"><pre>    git push
+</pre>
+</div>
+
               </div>
             </div>
           </div>

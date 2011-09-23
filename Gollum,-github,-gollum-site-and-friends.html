@@ -59,13 +59,35 @@
 <li>under that org, create the repo <code>wiki-ohnosequences.github.com</code>. This will have repo url <code>http://github.com/wiki-ohnosequences.github.com</code> and the contents of the <code>master</code> branch will be served as-is from <code>http://wiki-ohnosequences.github.com</code>.</li>
 <li>create a github.com wiki for that repo. This will create <em>another</em> repo, accessible at <code>git@github.com:wiki-ohnosequences/wiki-ohnosequences.github.com.wiki.git</code>. Everything you push there will be processed by gollum at github.com, and viewable through the github.com site.</li>
 <li><em>locally</em>, clone the wiki repository: <code>git clone git@github.com:wiki-ohnosequences/wiki-ohnosequences.github.com.wiki.git</code> and use <code>gollum-site</code> to generate a static site from that. This will be in a <code>_site</code> folder. There (and this is first-time setup) clone the <code>wiki-ohnosequences.github.com</code> repo and push to <code>master</code>.</li>
-</ul>
+</ul><h3>configuring a <code>gollum-site</code> node</h3>
+
+<p>After installing gollum-site and all its deps, there's the need for configuring repos etc. </p>
+
+<h4>clone wiki repo</h4>
+
+<p>First step is cloning the repo which has the wiki src.</p>
+
+<h4>sample script</h4>
+
+<div class="highlight"><pre>    <span class="c"># fetch latest from wiki repo</span>
+    git pull
+    <span class="c"># generate static site</span>
+    gollum-site generate
+    <span class="c"># go into static site folder, add everything and commit</span>
+    <span class="nb">cd </span>_site
+    git add .
+    git commit -m <span class="s1">'automatic wiki update'</span>
+    <span class="c"># push to github pages</span>
+    git push origin master
+</pre>
+</div>
+
               </div>
             </div>
           </div>
           <div class="admin">
             <div style="float: left;">
-              <small>Last edited by <b>Eduardo Pareja-Tobes</b>, 2011-09-22 15:59:26</small>
+              <small>Last edited by <b>Eduardo Pareja-Tobes</b>, 2011-09-23 11:39:42</small>
             </div>
           </div>
         </div>
